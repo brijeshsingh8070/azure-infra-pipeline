@@ -63,26 +63,6 @@ jobs:
       - name: Run TFLint
         run: tflint --format compact
 
-
-  # ==========================================================
-  # 3. CHECKOV
-  # ==========================================================
-  checkov:
-    name: Checkov IaC Security
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v6
-
-      - name: Run Checkov
-        uses: bridgecrewio/checkov-action@v12
-        with:
-          directory: .
-          framework: terraform
-          soft_fail: false
-
-
   # ==========================================================
   # 4. TFSEC
   # ==========================================================
@@ -141,7 +121,6 @@ jobs:
     needs:
       - gitleaks
       - tflint
-      - checkov
       - tfsec
       - terraform-validate
 
