@@ -6,7 +6,7 @@ rgs = {
   rg2 = {
     name     = "rg-brij-dev-2"
     location = "centralindia"
-}
+  }
 }
 vnets = {
   vnet1 = {
